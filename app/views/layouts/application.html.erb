@@ -6,8 +6,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
+<p class="flash"> <%= flash.notice %> </p>
 <%= yield %>
 
 </body>
