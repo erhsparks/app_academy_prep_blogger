@@ -26,7 +26,7 @@ include ArticlesHelper
   end
 
   def destroy
-    show
+    @article = Article.find(params[:id])
     @article.destroy
 
     flash.notice = %(Article "#{@article.title}" Deleted!)
@@ -35,11 +35,11 @@ include ArticlesHelper
   end
 
   def edit
-    show
+    @article = Article.find(params[:id])
   end
 
   def update
-    edit
+    @article = Article.find(params[:id])
     @article.update(article_params)
 
     flash.notice = %(Article "#{@article.title}" Updated!)
