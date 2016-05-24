@@ -6,10 +6,12 @@
     <%= link_to tag.name, tag_path(tag),
 	class: "tag_name", id: "tag_#{tag.name}" %>
 
+    <% if logged_in? %>
     <%= link_to "edit name", edit_tag_path(tag) %>
 
     <%= link_to "delete", tag_path(tag), method: :delete,
     data: {confirm: %(Really delete tag "#{tag.name}"?)}%>
+    <% end %>
   </li>
   <% end %>
 </ul>
