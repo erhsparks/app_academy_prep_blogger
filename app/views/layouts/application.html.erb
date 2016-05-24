@@ -20,6 +20,8 @@
       <% if logged_in? %>
       <%= "Logged in as #{current_user.email}" %>
       <%= link_to "(logout)", logout_path %>
+      <% elsif Author.count == 0 %>
+      <%= link_to "(sign up)", new_user_path %>
       <% else %>
       <%= link_to "(login)", login_path %>
       <% end %>
