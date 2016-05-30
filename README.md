@@ -2,7 +2,7 @@
 
 Intro to Rails w Blogger Project
 
-## Notes
+Notes:
 
 - To start up the server from cloud9, use '> bin/rails s -p $PORT -b $IP' (I made this an alias in my .bash_profile called 'c9server') & access at [https://appacademy-prep-erhsparks.c9users.io/][c9address].
 
