@@ -1,18 +1,22 @@
 <h1> <%= @article.title %> </h1>
 
-<p>
-  Tags:
-  <% @article.tags.each do |tag| %>
-  <%= link_to tag.name, tag_path(tag) %>
-  <% end %>
-</p>
-
 <% if @article.image.exists? %>
 <p> <%= image_tag @article.image.url(:medium) %> </p>
 <% end %>
 
 <p> <%= @article.body %> </p>
 
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+  <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+<!-- Note: the tutorial wanted me to put the tags at the top of -->
+<!-- the article but I think it makes much more sense to have -->
+<!-- them at the bottom because a reader is much more likely to -->
+<!-- click on a tag when they've just finished the article, not -->
+<!-- when they've just navigated to it. -->
 
 <%= link_to "<< Back to Articles List", articles_path %>
 
@@ -24,6 +28,7 @@
 <% end %>
 
 <h3> Comments (<%= @article.comments.size %>) </h3>
+
 <%= render partial: 'articles/comment', collection: @article.comments %>
 
 <%= render partial: 'comments/form' %>
